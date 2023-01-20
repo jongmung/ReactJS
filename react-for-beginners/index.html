@@ -29,9 +29,22 @@
         );
                         // const 다음 이름은 마음대로 지정
                         // React.("") 괄호 안 요소는 HTML 태그 이름
-        const container = React.createElement("div", null, [h3, btn]);
-                        // span과 btn을 한번에 render하고 싶을 떄 마지막에 배열로 넣어준다
-
+        const hit = React.createElement(
+            "button",
+            {
+            id:"hitting",
+            onClick: () => console.log("why hit me?!"),
+            style : {
+                backgroundColor: "gary",
+                },
+            },
+            "don't hit me"
+        );
+        
+        
+        
+        const container = React.createElement("div", null, [h3, btn, hit]);
+        // span과 btn을 한번에 render하고 싶을 떄 마지막에 배열로 넣어준다
         // ReactDOM.render(span, root) // render의 의미는 React element를 가지고 
         ReactDOM.render(container, root);    //HTML로 만들어 배치한다는 것, span을 root안에 넣어라
     </script>                                    
