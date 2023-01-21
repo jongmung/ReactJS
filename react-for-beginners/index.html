@@ -6,29 +6,17 @@
     <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
     <!--위 처럼 React를 먼저 import 해준다-->
-    <script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
         const root = document.getElementById("root"); // root를 가지고 온다.
-        const h3 = React.createElement("h3", 
-                        {
-                            id:"title",
-                            onMouseEnter: () => console.log("mouse enter"),
-                        } ,"Hello I'm span");
-                        // ReactJS로 element를 생성한 것, React를 import했기에 접근이 가능,
-                        // 괄호 안은 생성하고자 하는 HTML 태그와 이름이 같아야 한다. 
-                        // span을 만들고 id도 주고 내용도 한 줄에 넣었다.
-                        // null 값은 property 자리
-        const btn = React.createElement(
-            "button",   // button을 만들고 
-            {
-            onClick: () => console.log("im clicked"),
-            style : {
-                backgroundColor: "tomato",
-                },
-            },          // 클릭할때마다 출력하는 내용 함수/event listener
-            "Click me"  // 내부에는 content을 넣었고
-        );
-                        // const 다음 이름은 마음대로 지정
-                        // React.("") 괄호 안 요소는 HTML 태그 이름
+        const Title = (
+            <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+            Hello I'm title</h3> 
+            );
+        const Button = <button style={{
+            backgroundColor: "tomato",
+        }} onClick={() => console.log("im clicked")}>Click me</button>
+    
         const hit = React.createElement(
             "button",
             {
@@ -40,10 +28,7 @@
             },
             "don't hit me"
         );
-        
-        
-        
-        const container = React.createElement("div", null, [h3, btn, hit]);
+        const container = React.createElement("div", null, [Title, Button, hit]);
         // span과 btn을 한번에 render하고 싶을 떄 마지막에 배열로 넣어준다
         // ReactDOM.render(span, root) // render의 의미는 React element를 가지고 
         ReactDOM.render(container, root);    //HTML로 만들어 배치한다는 것, span을 root안에 넣어라
