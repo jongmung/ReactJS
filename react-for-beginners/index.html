@@ -9,28 +9,24 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         const root = document.getElementById("root"); // root를 가지고 온다.
-        const Title = (
+        
+        function Title() {
+            return ( 
             <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
             Hello I'm title</h3> 
             );
-        const Button = <button style={{
+        }
+        const Button = () => <button style={{
+            // arrow function, ()=> 함수화를 해줘야 밑에서 render를 할 수 있다. 위 작성법과 똑같다
             backgroundColor: "tomato",
-        }} onClick={() => console.log("im clicked")}>Click me</button>
-    
-        const hit = React.createElement(
-            "button",
-            {
-            id:"hitting",
-            onClick: () => console.log("why hit me?!"),
-            style : {
-                backgroundColor: "gary",
-                },
-            },
-            "don't hit me"
-        );
-        const container = React.createElement("div", null, [Title, Button, hit]);
-        // span과 btn을 한번에 render하고 싶을 떄 마지막에 배열로 넣어준다
-        // ReactDOM.render(span, root) // render의 의미는 React element를 가지고 
-        ReactDOM.render(container, root);    //HTML로 만들어 배치한다는 것, span을 root안에 넣어라
+            }} onClick={() => console.log("im clicked")}>Click me</button>
+        
+        const Hit = () => <button id="hitting" style={{
+            backgroundColor: "gary",
+            }} onClick={() => console.log("why hit me?!")}>hit me</button>
+        
+        const Container = () => <div>
+            <Title /><Button /> <Hit /></div>;
+        ReactDOM.render(<Container />, root);    //HTML로 만들어 배치한다는 것, span을 root안에 넣어라
     </script>                                    
-</html>
+</html> 
