@@ -10,17 +10,25 @@
     <script type="text/babel">
         const root = document.getElementById("root"); // root를 가지고 온다.
         let counter = 0; // 이러한 변수를 JSX에 전달하는 방식
+        let enter = 0;
         function countUp() {
             counter = counter + 1;
             render();
         }
+        function enterUp() {
+            enter = enter + 2;
+            render();
+        }
+        
         function render() {
             ReactDOM.render(<Container />, root); // 함수가 동작한 뒤, 다시 로드해야 하므로 존재
         }
         const Container = () => (
         <div>
-            <h3>Total clicks: {counter}</h3> 
+            <h3>Total clicks: {counter}</h3>
             <button onClick={countUp}>Click me</button>
+            <h3>Total enters: {enter}</h3>
+            <h3 onMouseEnter={enterUp}>(aaaaa)</h3>
         </div>);
         render();
     </script>                                    
