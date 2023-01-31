@@ -12,7 +12,8 @@
         function App() {
             const [counter, setCounter] = React.useState(0); // 함수 안 return 전에 상수를 하나 생성
             const onClick = () => {
-                setCounter(counter + 1);
+                //setCounter(counter + 1);
+                setCounter((current) => current + 1); // 이 함수의 첫 번째 argument는 현재 값
             };
             const onClick1= () => {
                 setCounter(counter - 1);
@@ -21,8 +22,6 @@
                 <div>
                     <h3>Total clicks: {counter}</h3>
                     <button onClick={onClick}>Click me</button>
-                    <h3>Total enters: 0</h3>
-                    <h3>(aaaaa)</h3>
                     <h3>Total clicks: {counter}</h3>
                     <button onClick={onClick1}>Click me(-)</button>
                  </div>);
