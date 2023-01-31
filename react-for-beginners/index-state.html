@@ -14,14 +14,17 @@
             const onClick = () => {
                 setCounter(counter + 1);
             };
+            const onClick1= () => {
+                setCounter(counter - 1);
+            }
             return(
                 <div>
                     <h3>Total clicks: {counter}</h3>
                     <button onClick={onClick}>Click me</button>
                     <h3>Total enters: 0</h3>
                     <h3>(aaaaa)</h3>
-                    <h3>Total clicks: 0</h3>
-                    <button>Click me(-)</button>
+                    <h3>Total clicks: {counter}</h3>
+                    <button onClick={onClick1}>Click me(-)</button>
                  </div>);
     }
     ReactDOM.render(<App />, root); // 함수가 동작한 뒤, 다시 로드해야 하므로 존재
