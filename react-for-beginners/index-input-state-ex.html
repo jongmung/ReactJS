@@ -9,24 +9,27 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         function App() {
-            const [minutes, setMinutes] = React.useState(); // useState는 array를 제고암
+            const [km, setKm] = React.useState(); // useState는 array를 제고암
             const onChange = (event) => {
                 setMinutes(event.target.value);// 입력값을 받아옴
             };
             return(
                 <div>
                     <h1 className="hi">Converter Gi</h1>
-                    <label htmlFor="minutes">Minutes : </label>
+                    <label htmlFor="km">km : </label>
                     <input 
-                      value={minutes} 
-                      id="minutes" 
-                      placeholder="Minutes"
+                      value={km} 
+                      id="km" 
+                      placeholder="km"
                       type="number" 
                       onChange={onChange}
                     />
-                    <h4>you want to convert {minutes}</h4>
-                    <label htmlFor="hours">Hours : </label>
-                    <input id="hours" placeholder="Hours" type="number" />
+                    <h4>you want to convert {km}</h4>
+                    <label htmlFor="hours">mile : </label>
+                    <input 
+                    id="mile" 
+                    placeholder="mile" 
+                    type="number" />
                 </div>);
     }
     const root = document.getElementById("root"); // root를 가지고 온다.
