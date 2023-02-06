@@ -25,11 +25,20 @@
                       onChange={onChange}
                     />
                     <h4>you want to convert {km}</h4>
-                    <label htmlFor="hours">mile : </label>
+                    <label htmlFor="mile">mile : </label>
                     <input 
                     id="mile" 
                     placeholder="mile" 
-                    type="number" />
+                    type="number" 
+                    onChange={onChange}/>
+
+                    <h4>you want to convert {km}</h4>
+                    <label htmlFor="hours">hours : </label>
+                    <input 
+                    id="hours" 
+                    placeholder="hours" 
+                    type="number" 
+                    onChange={onChange}/>
                 </div>);
     }
     const root = document.getElementById("root"); // root를 가지고 온다.
