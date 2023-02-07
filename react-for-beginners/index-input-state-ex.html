@@ -11,7 +11,11 @@
         function App() {
             const [km, setKm] = React.useState(); // useState는 array를 제고암
             const onChange = (event) => {
-                setMinutes(event.target.value);// 입력값을 받아옴
+                setKm(event.target.value);// 입력값을 받아옴
+            };
+            const [mile, setMile] = React.useState(); // useState는 array를 제고암
+            const onChange1 = (event) => {
+                setMile(event.target.value);// 입력값을 받아옴
             };
             return(
                 <div>
@@ -22,23 +26,22 @@
                       id="km" 
                       placeholder="km"
                       type="number" 
-                      onChange={onChange}
-                    />
+                      onChange={onChange} />
                     <h4>you want to convert {km}</h4>
+
                     <label htmlFor="mile">mile : </label>
                     <input 
+                    value={mile}
                     id="mile" 
                     placeholder="mile" 
                     type="number" 
-                    onChange={onChange}/>
+                    onChange={onChange1}/>
+                    <h4>you want to convert {mile}</h4>
 
-                    <h4>you want to convert {km}</h4>
-                    <label htmlFor="hours">hours : </label>
-                    <input 
-                    id="hours" 
-                    placeholder="hours" 
-                    type="number" 
-                    onChange={onChange}/>
+
+                
+
+              
                 </div>);
     }
     const root = document.getElementById("root"); // root를 가지고 온다.
