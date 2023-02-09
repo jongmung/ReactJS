@@ -17,6 +17,10 @@
             const onChange1 = (event) => {
                 setMile(event.target.value);// 입력값을 받아옴
             };
+            const [cm, setCm] = React.useState(); // useState는 array를 제고암
+            const onChange2 = (event) => {
+                setCm(event.target.value);// 입력값을 받아옴
+            };
             return(
                 <div>
                     <h1 className="hi">Converter Gi</h1>
@@ -38,7 +42,14 @@
                     onChange={onChange1}/>
                     <h4>you want to convert {mile}</h4>
 
-
+                    <label htmlFor="cm">cm : </label>
+                    <input 
+                    value={cm}
+                    id="cm" 
+                    placeholder="cm" 
+                    type="number" 
+                    onChange={onChange2}/>
+                    <h4>you want to convert {cm*0.01}m</h4>
                 
 
               
