@@ -13,9 +13,9 @@
             const onChange = (event) => {
                 setKm(event.target.value);// 입력값을 받아옴
             };
-            const [mile, setMile] = React.useState(); // useState는 array를 제고암
+            const [kg, setKg] = React.useState(); // useState는 array를 제고암
             const onChange1 = (event) => {
-                setMile(event.target.value);// 입력값을 받아옴
+                setKg(event.target.value);// 입력값을 받아옴
             };
             const [cm, setCm] = React.useState(); // useState는 array를 제고암
             const onChange2 = (event) => {
@@ -33,14 +33,14 @@
                       onChange={onChange} />
                     <h4>you want to convert {km/0.001}m</h4>
 
-                    <label htmlFor="mile">mile : </label>
+                    <label htmlFor="kg">kg : </label>
                     <input 
-                    value={mile}
-                    id="mile" 
-                    placeholder="mile" 
+                    value={kg}
+                    id="kg" 
+                    placeholder="kg" 
                     type="number" 
                     onChange={onChange1}/>
-                    <h4>you want to convert {mile}</h4>
+                    <h4>you want to convert {kg*0.001}t</h4>
 
                     <label htmlFor="cm">cm : </label>
                     <input 
