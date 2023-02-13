@@ -9,21 +9,22 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         function App() {
-            const [minutes, setMinutes] = React.useState(); // useState는 array를 제고암
+            const [minutes, setMinutes] = React.useState(); // useState는 array를 제공함
             const onChange = (event) => {
                 setMinutes(event.target.value);// 입력값을 받아옴
             };
-            const [hours, setHours] = React.useState(); // useState는 array를 제고암
+            const [hours, setHours] = React.useState(); // useState는 array를 제공함
             const onChange1 = (event) => {
                 setHours(event.target.value);// 입력값을 받아옴
             };
-            return(
+            return( 
                 <div>
                     <h1 className="hi">Super Converter</h1>
                     <label htmlFor="minutes">Minutes</label>
                     <input value={minutes} id="minutes" placeholder="Minutes"
                       type="number" onChange={onChange} />
                     <h4>you want to convert {minutes}</h4>
+                    
                     <label htmlFor="hours">Hours</label>
                     <input id="hours" placeholder="Hours" type="number"
                     onChange={onChange1} />
